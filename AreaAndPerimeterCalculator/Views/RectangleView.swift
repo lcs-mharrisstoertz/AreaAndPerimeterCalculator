@@ -30,6 +30,35 @@ struct RectangleView: View {
             }
             Spacer()
         }
+        
+        //lenght
+        
+        Text("Length")
+            .font(.title2)
+            .bold()
+        //use string interpolation \() to display length
+        
+        Text("\(length)")
+        
+        //width
+        
+        Text("Width")
+            .font(.title2)
+            .bold()
+        //use string interpolation \() to display length
+        
+        Text("\(width)")
+        
+        
+        //area
+        
+        Text("Area")
+            .font(.title2)
+            .bold()
+        //use string interpolation \() to display length
+        
+        Text("\(area)")
+        
     }
 }
 
