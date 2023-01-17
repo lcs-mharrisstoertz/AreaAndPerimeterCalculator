@@ -9,8 +9,8 @@ import SwiftUI
 
 struct RectangleView: View {
     // MARK: stored properties
-    let length: Double = 7
-    let width: Double = 5
+    @State var length: Double = 7
+    @State var width: Double = 5
     
     
     // MARK: computed properties
@@ -18,7 +18,7 @@ struct RectangleView: View {
         return length*width
     }
     
-    var body: some View {
+    var body: some View{
         VStack{
             HStack{
                 Image("Rectangle")
@@ -36,6 +36,10 @@ struct RectangleView: View {
         Text("Length")
             .font(.title2)
             .bold()
+        
+        //slider to control length
+        
+        Slider(value: Binding.constant(length), in: 0...100, label: { Text("Length")}, minimumValueLabel: {Text("0")}, maximumValueLabel: {Text("100")})
         //use string interpolation \() to display length
         
         Text("\(length)")
@@ -45,6 +49,8 @@ struct RectangleView: View {
         Text("Width")
             .font(.title2)
             .bold()
+        
+        Slider(value: Binding.constant(width), in: 0...100, label: { Text("Length")}, minimumValueLabel: {Text("0")}, maximumValueLabel: {Text("100")})
         //use string interpolation \() to display length
         
         Text("\(width)")
@@ -55,6 +61,8 @@ struct RectangleView: View {
         Text("Area")
             .font(.title2)
             .bold()
+        
+        Slider(value: Binding.constant(area), in: 0...100, label: { Text("Length")}, minimumValueLabel: {Text("0")}, maximumValueLabel: {Text("100")})
         //use string interpolation \() to display length
         
         Text("\(area)")
