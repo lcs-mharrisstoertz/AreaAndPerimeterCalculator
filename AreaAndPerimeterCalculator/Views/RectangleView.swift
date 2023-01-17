@@ -20,6 +20,7 @@ struct RectangleView: View {
     
     var body: some View{
         VStack{
+            
             HStack{
                 Image("Rectangle")
                     .resizable()
@@ -29,44 +30,45 @@ struct RectangleView: View {
                 Spacer()
             }
             Spacer()
+            
+            
+            //lenght
+            
+            Text("Length")
+                .font(.title2)
+                .bold()
+            
+            //slider to control length
+            
+            Slider(value: $length, in: 0...100, label: { Text("Length")}, minimumValueLabel: {Text("0")}, maximumValueLabel: {Text("100")})
+            //use string interpolation \() to display length
+            
+            Text("\(length)")
+            
+            //width
+            
+            Text("Width")
+                .font(.title2)
+                .bold()
+            
+            Slider(value: $width, in: 0...100, label: { Text("Length")}, minimumValueLabel: {Text("0")}, maximumValueLabel: {Text("100")})
+            //use string interpolation \() to display length
+            
+            Text("\(width)")
+            
+            
+            //area
+            
+            Text("Area")
+                .font(.title2)
+                .bold()
+            
+            Slider(value: $area, in: 0...100, label: { Text("Length")}, minimumValueLabel: {Text("0")}, maximumValueLabel: {Text("100")})
+            //use string interpolation \() to display length
+            
+            Text("\(area)")
+            
         }
-        
-        //lenght
-        
-        Text("Length")
-            .font(.title2)
-            .bold()
-        
-        //slider to control length
-        
-        Slider(value: Binding.constant(length), in: 0...100, label: { Text("Length")}, minimumValueLabel: {Text("0")}, maximumValueLabel: {Text("100")})
-        //use string interpolation \() to display length
-        
-        Text("\(length)")
-        
-        //width
-        
-        Text("Width")
-            .font(.title2)
-            .bold()
-        
-        Slider(value: Binding.constant(width), in: 0...100, label: { Text("Length")}, minimumValueLabel: {Text("0")}, maximumValueLabel: {Text("100")})
-        //use string interpolation \() to display length
-        
-        Text("\(width)")
-        
-        
-        //area
-        
-        Text("Area")
-            .font(.title2)
-            .bold()
-        
-        Slider(value: Binding.constant(area), in: 0...100, label: { Text("Length")}, minimumValueLabel: {Text("0")}, maximumValueLabel: {Text("100")})
-        //use string interpolation \() to display length
-        
-        Text("\(area)")
-        
     }
 }
 
